@@ -6,8 +6,8 @@ const TextArea = ({ setWord, setCharacter, setSentence, setPronoun, setParagraph
   
   const countingWords = (e:any) => {
     e.preventDefault()
-    input.current = e.target.value
 
+    input.current = e.target.value
     const splitedWord = input.current.split(' ');
     
     setWord(splitedWord.filter((word) => word !== '').length);
@@ -19,7 +19,6 @@ const TextArea = ({ setWord, setCharacter, setSentence, setPronoun, setParagraph
       const pronounCount = words.filter((word) => pronouns.includes(word)).length;
       return total + pronounCount;
     }, 0);    
-
     setPronoun(count)
     
     const regex = /[\w)][.?!]/
@@ -42,12 +41,9 @@ const TextArea = ({ setWord, setCharacter, setSentence, setPronoun, setParagraph
       setReadTime(`~${readTime} minute`);
     }
   }
-
   
   return (
-    <>
       <textarea onChange={ countingWords } className="text-area" placeholder="Paste your text here..." />
-    </>
   ) 
 }
 
