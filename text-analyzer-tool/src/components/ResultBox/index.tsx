@@ -1,26 +1,40 @@
-import './index.scss'
+import { ReactNode } from 'react';
+import './index.scss';
 
-const ResultBox = () => {
-  const resultBar = [
+interface ResultBoxProps {
+  word: number;
+  character: number;
+  sentence: number;
+  pronoun: number;
+  paragraph: number;
+}
+
+interface ResultBox {
+  title: string;
+  value: number;
+}
+
+const ResultBox = ({ word, character, sentence, pronoun, paragraph }: ResultBoxProps) => {
+  const resultBar: ResultBox[] = [
     {
       title: 'Words',
-      value: 0,
+      value: word,
     },
     {
       title: 'Characters',
-      value: 0,
+      value: character,
     },
     {
       title: 'Sentences',
-      value: 0,
+      value: sentence,
     },
     {
       title: 'Paragraphs ',
-      value: 0,
+      value: paragraph,
     },
     {
       title: 'Pronouns',
-      value: 0,
+      value: pronoun,
     },
   ]
 
